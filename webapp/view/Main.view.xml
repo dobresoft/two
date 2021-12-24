@@ -1,0 +1,26 @@
+<mvc:View 
+controllerName="sap.ui.dobresoft.controller.Main" 
+xmlns="sap.m" xmlns:form="sap.ui.layout.form" 
+xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" height="100%">
+    <NavContainer id="wizardNavContainer">
+        <pages>
+            <Page id="wizardContentPage" title="{i18n>checkoutTitle}">
+                <content>
+
+                    <form:SimpleForm editable="true">
+
+                        <Label text="{i18n>BUKRS}" />
+                        <Select selectedKey="{/companyCode}">
+                            <core:Item key="1000" text="Utopia company" />
+                        </Select>
+                        <Label text="{i18n>BUDAT}" />
+                        <DatePicker id="DP3" displayFormat="short" />
+                        <Input id="input0" showValueHelp="true" valueHelpRequest="onSearch" />
+                        <Button type="Back" press="onPress" />
+
+                    </form:SimpleForm>
+                </content>
+            </Page>
+        </pages>
+    </NavContainer>
+</mvc:View>

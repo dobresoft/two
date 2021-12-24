@@ -1,0 +1,81 @@
+<mvc:View
+controllerName="sap.ui.dobresoft.controller.route.Login"
+displayBlock="true"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc">
+  <VBox
+    fitContainer="true"
+    alignItems="Center"
+    alignContent="Center"
+    justifyContent="Center"
+  >
+    <items>
+      <VBox
+        id='loginForm'
+        class='loginForm'
+      >
+        <MessageStrip
+          id="errorMessage"
+          showIcon="true"
+          showCloseButton="true"
+          text="Error"
+          type="Error"
+        >
+          <layoutData>
+            <FlexItemData
+              styleClass="loginErrorMessage"
+            />
+          </layoutData>
+        </MessageStrip>
+        <Label
+          text="{i18n>loginUsernameLabel.text}"
+          labelFor="username"
+        />
+        <Input
+          id="username"
+          placeholder="{i18n>loginUsernameInput.placeholder}"
+          value="{
+            path: 'login>/username',
+            type: 'sap.ui.model.type.String',
+            constraints: {
+              minLength: 1,
+              maxLength: 254
+            }
+          }"
+          liveChange=".OnChange"
+          submit=".OnSubmit"
+        />
+        <Label
+          class="sapUiTinyMarginTop"
+          text="{i18n>loginPasswordLabel.text}"
+          labelFor="password"
+        />
+        <Input
+          id="password"
+          placeholder="{i18n>loginPasswordInput.placeholder}"
+          type="Password"
+          value="{
+            path: 'login>/password',
+            type: 'sap.ui.model.type.String',
+            constraints: {
+              minLength: 1,
+              maxLength: 80
+            }
+          }"
+          liveChange=".OnChange"
+          submit=".OnSubmit"
+        />
+        <Button
+          busy="{user>/loading}"
+          busyIndicatorDelay="100"
+          icon="sap-icon://journey-arrive"
+          class="sapUiSmallMarginTop"
+          text="{i18n>loginSubmitButton.text}"
+          type="Emphasized"
+          width="100%"
+          press=".OnSubmit"
+        />
+      </VBox>
+    </items>
+  </VBox>
+</mvc:View>

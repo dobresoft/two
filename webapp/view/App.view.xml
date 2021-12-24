@@ -1,0 +1,9 @@
+<mvc:View 
+	controllerName="sap.ui.dobresoft.controller.App" 
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true">	
+	<Shell>			
+		<App class="myAppOpenUI5" id="app" />
+	</Shell>	
+</mvc:View>

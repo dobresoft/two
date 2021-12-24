@@ -1,0 +1,135 @@
+{
+    "_version": "1.1.0",
+	
+	"start_url": "<startUrl>",
+	
+    "sap.app": {
+        "_version": "1.1.0",
+        "id": "sap.ui.dobresoft",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}"
+    },
+    "sap.ui": {
+        "_version": "1.1.0",
+        "icons": {
+            "icon": "<icon>",
+            "favIcon": "<favIcon>",
+            "phone": "<phone>",
+            "phone@2": "<phone@2>",
+            "tablet": "<tablet>",
+            "tablet@2": "<tablet@2>"
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "resources": {
+            "js": [
+                {
+                    "uri": "<uri>"
+                }
+            ],
+            "css": [
+                {
+                    "uri": "<uri>",
+                    "id": "<id>"
+                }
+            ]
+        },
+        "dependencies": {
+            "minUI5Version": "1.6",
+            "libs": {
+                "sap.m": {}
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "sap.ui.dobresoft.i18n.i18n"
+                },                  
+                "uri": "<uriRelativeToManifest>"
+            }
+        },
+        "rootView": {
+            "viewName": "sap.ui.dobresoft.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "handleValidation": false,
+        "config": {
+          
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "sap.ui.dobresoft.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true,
+                "bypassed": {
+                    "target": "notFound"
+                 }                
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "main",
+                    "target": "main"
+                },
+                {
+                    "pattern": "otro",
+                    "name": "otro",
+                    "target": "otro"
+                }                
+            ],
+            "targets": {
+                "main": {
+                    "viewId": "main",
+                    "viewName": "Main"
+                },
+                "otro": {
+                    "viewId": "otro",
+                    "viewName": "otro"
+                },
+                "notFound": {
+                   "viewName": "NotFound",
+                   "transition": "show"
+                }                                     
+            }            
+        },
+        "extends": {
+            "component" : "<extendedComponentId>",
+			"minVersion": "<minComp1Version>",
+			"extensions": {}
+        },
+        "contentDensities": {
+            "compact": false,
+            "cozy": false
+        }
+    },
+
+    "sap.platform.abap": {
+        "_version": "1.1.0",
+        "uri": "<uri>"
+    },
+    "sap.platform.hcp": {
+        "_version": "1.1.0",
+        "uri": "<uri>"
+    }
+}

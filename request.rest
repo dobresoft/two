@@ -1,0 +1,9 @@
+POST http://sapehp8.skillindia.com:8000/sap/winter/01?sap-client=800
+Authorization: Basic c2FwdXNlcjpjb2NhY29sYQ==
+content-Type: application/json
+{
+    "username": "GABRIEL",
+    "password": "abc"
+}
+
+
